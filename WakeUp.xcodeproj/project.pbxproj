@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7203B3B9223D7A08006F5665 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7203B3B8223D7A08006F5665 /* Date+Extension.swift */; };
+		7203B3BC22458910006F5665 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7203B3BB22458910006F5665 /* HealthKit.framework */; };
+		7203B3BF2246CD6A006F5665 /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7203B3BE2246CD6A006F5665 /* Notification+Extension.swift */; };
+		7203B3C12246CE69006F5665 /* MotionTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7203B3C02246CE68006F5665 /* MotionTracking.swift */; };
+		722825E0223AA7FB0060C608 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722825DF223AA7FB0060C608 /* Alarm.swift */; };
+		722825E2223AAF370060C608 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722825E1223AAF370060C608 /* Report.swift */; };
+		C26C5F0E2230208900F08E5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26C5F0D2230208900F08E5F /* AppDelegate.swift */; };
+		C26C5F102230208900F08E5F /* SetAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26C5F0F2230208900F08E5F /* SetAlarmViewController.swift */; };
+		C26C5F132230208900F08E5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26C5F112230208900F08E5F /* Main.storyboard */; };
+		C26C5F162230208900F08E5F /* WakeUp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C26C5F142230208900F08E5F /* WakeUp.xcdatamodeld */; };
+		C26C5F182230208A00F08E5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C26C5F172230208A00F08E5F /* Assets.xcassets */; };
+		C26C5F1B2230208A00F08E5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26C5F192230208A00F08E5F /* LaunchScreen.storyboard */; };
+		C26C5F2A22345E6B00F08E5F /* RunAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26C5F2922345E6B00F08E5F /* RunAlarmViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7203B3B8223D7A08006F5665 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		7203B3BB22458910006F5665 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		7203B3BD22458910006F5665 /* WakeUp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WakeUp.entitlements; sourceTree = "<group>"; };
+		7203B3BE2246CD6A006F5665 /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
+		7203B3C02246CE68006F5665 /* MotionTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionTracking.swift; sourceTree = "<group>"; };
+		722825DF223AA7FB0060C608 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		722825E1223AAF370060C608 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		C26C5F0A2230208900F08E5F /* WakeUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WakeUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C26C5F0D2230208900F08E5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C26C5F0F2230208900F08E5F /* SetAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAlarmViewController.swift; sourceTree = "<group>"; };
+		C26C5F122230208900F08E5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C26C5F152230208900F08E5F /* WakeUp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WakeUp.xcdatamodel; sourceTree = "<group>"; };
+		C26C5F172230208A00F08E5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C26C5F1A2230208A00F08E5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C26C5F1C2230208A00F08E5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C26C5F2922345E6B00F08E5F /* RunAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunAlarmViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C26C5F072230208900F08E5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7203B3BC22458910006F5665 /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7203B3BA22458910006F5665 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7203B3BB22458910006F5665 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C26C5F012230208900F08E5F = {
+			isa = PBXGroup;
+			children = (
+				C26C5F0D2230208900F08E5F /* AppDelegate.swift */,
+				C26C5F0C2230208900F08E5F /* WakeUp */,
+				C26C5F0B2230208900F08E5F /* Products */,
+				7203B3BA22458910006F5665 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C26C5F0B2230208900F08E5F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C26C5F0A2230208900F08E5F /* WakeUp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C26C5F0C2230208900F08E5F /* WakeUp */ = {
+			isa = PBXGroup;
+			children = (
+				7203B3BD22458910006F5665 /* WakeUp.entitlements */,
+				C26C5F22223023AD00F08E5F /* Model */,
+				C26C5F24223023CF00F08E5F /* Views */,
+				C26C5F23223023BC00F08E5F /* View Controllers */,
+				C26C5F25223023DB00F08E5F /* Storyboards */,
+				C26C5F26223023E900F08E5F /* Assets */,
+				C26C5F1C2230208A00F08E5F /* Info.plist */,
+			);
+			path = WakeUp;
+			sourceTree = "<group>";
+		};
+		C26C5F22223023AD00F08E5F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C26C5F272234446700F08E5F /* Facebook API */,
+				C26C5F282234447100F08E5F /* Twitter API */,
+				C26C5F142230208900F08E5F /* WakeUp.xcdatamodeld */,
+				722825DF223AA7FB0060C608 /* Alarm.swift */,
+				7203B3C02246CE68006F5665 /* MotionTracking.swift */,
+				722825E1223AAF370060C608 /* Report.swift */,
+				7203B3B8223D7A08006F5665 /* Date+Extension.swift */,
+				7203B3BE2246CD6A006F5665 /* Notification+Extension.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C26C5F23223023BC00F08E5F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C26C5F0F2230208900F08E5F /* SetAlarmViewController.swift */,
+				C26C5F2922345E6B00F08E5F /* RunAlarmViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		C26C5F24223023CF00F08E5F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C26C5F25223023DB00F08E5F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C26C5F112230208900F08E5F /* Main.storyboard */,
+				C26C5F192230208A00F08E5F /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C26C5F26223023E900F08E5F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C26C5F172230208A00F08E5F /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		C26C5F272234446700F08E5F /* Facebook API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Facebook API";
+			sourceTree = "<group>";
+		};
+		C26C5F282234447100F08E5F /* Twitter API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Twitter API";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C26C5F092230208900F08E5F /* WakeUp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C26C5F1F2230208A00F08E5F /* Build configuration list for PBXNativeTarget "WakeUp" */;
+			buildPhases = (
+				C26C5F062230208900F08E5F /* Sources */,
+				C26C5F072230208900F08E5F /* Frameworks */,
+				C26C5F082230208900F08E5F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WakeUp;
+			productName = WakeUp;
+			productReference = C26C5F0A2230208900F08E5F /* WakeUp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C26C5F022230208900F08E5F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Aslan Apps";
+				TargetAttributes = {
+					C26C5F092230208900F08E5F = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = C26C5F052230208900F08E5F /* Build configuration list for PBXProject "WakeUp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C26C5F012230208900F08E5F;
+			productRefGroup = C26C5F0B2230208900F08E5F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C26C5F092230208900F08E5F /* WakeUp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C26C5F082230208900F08E5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C26C5F1B2230208A00F08E5F /* LaunchScreen.storyboard in Resources */,
+				C26C5F182230208A00F08E5F /* Assets.xcassets in Resources */,
+				C26C5F132230208900F08E5F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C26C5F062230208900F08E5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7203B3C12246CE69006F5665 /* MotionTracking.swift in Sources */,
+				C26C5F102230208900F08E5F /* SetAlarmViewController.swift in Sources */,
+				C26C5F0E2230208900F08E5F /* AppDelegate.swift in Sources */,
+				722825E0223AA7FB0060C608 /* Alarm.swift in Sources */,
+				C26C5F2A22345E6B00F08E5F /* RunAlarmViewController.swift in Sources */,
+				7203B3B9223D7A08006F5665 /* Date+Extension.swift in Sources */,
+				C26C5F162230208900F08E5F /* WakeUp.xcdatamodeld in Sources */,
+				7203B3BF2246CD6A006F5665 /* Notification+Extension.swift in Sources */,
+				722825E2223AAF370060C608 /* Report.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C26C5F112230208900F08E5F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C26C5F122230208900F08E5F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C26C5F192230208A00F08E5F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C26C5F1A2230208A00F08E5F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C26C5F1D2230208A00F08E5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C26C5F1E2230208A00F08E5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C26C5F202230208A00F08E5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WakeUp/WakeUp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C43W85383G;
+				INFOPLIST_FILE = WakeUp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.aslanapps.WakeUp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C26C5F212230208A00F08E5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WakeUp/WakeUp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C43W85383G;
+				INFOPLIST_FILE = WakeUp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.aslanapps.WakeUp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C26C5F052230208900F08E5F /* Build configuration list for PBXProject "WakeUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C26C5F1D2230208A00F08E5F /* Debug */,
+				C26C5F1E2230208A00F08E5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C26C5F1F2230208A00F08E5F /* Build configuration list for PBXNativeTarget "WakeUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C26C5F202230208A00F08E5F /* Debug */,
+				C26C5F212230208A00F08E5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C26C5F142230208900F08E5F /* WakeUp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C26C5F152230208900F08E5F /* WakeUp.xcdatamodel */,
+			);
+			currentVersion = C26C5F152230208900F08E5F /* WakeUp.xcdatamodel */;
+			path = WakeUp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C26C5F022230208900F08E5F /* Project object */;
+}

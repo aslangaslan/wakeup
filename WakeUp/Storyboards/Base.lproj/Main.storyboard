@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iqe-uZ-8Dm">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings-->
+        <scene sceneID="hUO-Rs-Uix">
+            <objects>
+                <viewController id="iuN-f3-Uam" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0kv-nn-pKz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="zYz-HJ-4Ou"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" id="hXj-34-XHg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z5O-lq-dYK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1055" y="470"/>
+        </scene>
+        <!--Report-->
+        <scene sceneID="u84-PM-4F8">
+            <objects>
+                <viewController id="als-81-pxK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YTq-3Z-CId">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="FvY-Qc-20A"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Report" id="ulT-nB-P6i"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hG9-cL-L3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1054" y="-876"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="vTh-Eq-emZ">
+            <objects>
+                <tabBarController id="iqe-uZ-8Dm" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fc7-ff-xOe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="gXk-em-sRw"/>
+                        <segue destination="als-81-pxK" kind="relationship" relationship="viewControllers" id="pdt-dI-gFn"/>
+                        <segue destination="Obc-YE-hQs" kind="relationship" relationship="viewControllers" id="SgD-ER-u5X"/>
+                        <segue destination="iuN-f3-Uam" kind="relationship" relationship="viewControllers" id="ld9-BL-NvS"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sx0-9j-2fw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2006" y="-544"/>
+        </scene>
+        <!--Social-->
+        <scene sceneID="oIr-MT-dAs">
+            <objects>
+                <viewController id="Obc-YE-hQs" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pbH-Ry-hEI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="83C-ed-RXp"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Social" id="FdH-7P-pak"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7BP-rt-AJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1055" y="-202"/>
+        </scene>
+        <!--Alarm-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SetAlarmViewController" customModule="WakeUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="gb8-gZ-XMC">
+                                <rect key="frame" x="27.5" y="167.5" width="320" height="332"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="AVA-kk-RCj">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="574268818.14647698">
+                                            <!--2019-03-14 15:06:58 +0000-->
+                                        </date>
+                                        <connections>
+                                            <action selector="datePickerAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="4VB-Wb-l7y"/>
+                                        </connections>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVm-YI-NyC">
+                                        <rect key="frame" x="80" y="296" width="160" height="36"/>
+                                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <state key="normal" title="Set Alarm">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="setAlarmAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2ej-gS-NfG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fVm-YI-NyC" firstAttribute="leading" secondItem="gb8-gZ-XMC" secondAttribute="leading" constant="80" id="Pj3-Ha-TCg"/>
+                                    <constraint firstAttribute="trailing" secondItem="fVm-YI-NyC" secondAttribute="trailing" constant="80" id="ySh-18-ZL8"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gb8-gZ-XMC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bJQ-7u-yxr"/>
+                            <constraint firstItem="gb8-gZ-XMC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lPx-c7-CHw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Alarm" id="eYi-2B-29Y"/>
+                    <connections>
+                        <outlet property="datePicker" destination="AVA-kk-RCj" id="i5L-DP-8NX"/>
+                        <segue destination="WNC-jq-XKd" kind="show" identifier="ShowRunAlarmViewController" id="cjj-sE-elK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1055" y="-1554"/>
+        </scene>
+        <!--Run Alarm View Controller-->
+        <scene sceneID="dEG-fU-rZa">
+            <objects>
+                <viewController storyboardIdentifier="RunAlarmViewController" id="WNC-jq-XKd" customClass="RunAlarmViewController" customModule="WakeUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3my-P4-95u">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gi4-eh-BzA">
+                                <rect key="frame" x="295" y="53" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Fener"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="2Rz-yZ-CJH">
+                                <rect key="frame" x="32" y="172" width="311" height="323"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Rgl-g4-ZeI">
+                                        <rect key="frame" x="34.5" y="0.0" width="242" height="155"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tup-KP-pmf">
+                                                <rect key="frame" x="0.0" y="0.0" width="242" height="131.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="96"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarm 07:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUI-jb-pGg">
+                                                <rect key="frame" x="73.5" y="131.5" width="95.5" height="23.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XGi-61-jKr">
+                                        <rect key="frame" x="31" y="215" width="249" height="108"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fny-We-sdJ">
+                                                <rect key="frame" x="99.5" y="0.0" width="50" height="50"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please make sure your device is connected to a power source" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CV0-zR-dJP">
+                                                <rect key="frame" x="0.0" y="58" width="249" height="50"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iII-JQ-rce">
+                                        <rect key="frame" x="80" y="323" width="151" height="0.0"/>
+                                        <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Snooze">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="snoozeAction:" destination="WNC-jq-XKd" eventType="touchUpInside" id="JrC-ui-gHj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="iII-JQ-rce" secondAttribute="trailing" constant="80" id="AeK-gr-q6y"/>
+                                    <constraint firstItem="iII-JQ-rce" firstAttribute="leading" secondItem="2Rz-yZ-CJH" secondAttribute="leading" constant="80" id="v6L-JD-ltj"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt; Cancel &gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9v-yD-jWz">
+                                <rect key="frame" x="145" y="583.5" width="85" height="23.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2Rz-yZ-CJH" secondAttribute="trailing" constant="32" id="6Rl-hR-RXu"/>
+                            <constraint firstItem="2Rz-yZ-CJH" firstAttribute="centerX" secondItem="3my-P4-95u" secondAttribute="centerX" id="cxx-hj-Arl"/>
+                            <constraint firstItem="TVd-kg-gyR" firstAttribute="bottom" secondItem="m9v-yD-jWz" secondAttribute="bottom" constant="60" id="tfH-L9-ikx"/>
+                            <constraint firstItem="m9v-yD-jWz" firstAttribute="centerX" secondItem="3my-P4-95u" secondAttribute="centerX" id="va8-Ui-UMV"/>
+                            <constraint firstItem="2Rz-yZ-CJH" firstAttribute="centerY" secondItem="3my-P4-95u" secondAttribute="centerY" id="w3u-TD-yN3"/>
+                            <constraint firstItem="2Rz-yZ-CJH" firstAttribute="leading" secondItem="3my-P4-95u" secondAttribute="leading" constant="32" id="xoT-d0-Y5R"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TVd-kg-gyR"/>
+                    </view>
+                    <connections>
+                        <outlet property="alarmLabel" destination="fUI-jb-pGg" id="jhf-x5-REa"/>
+                        <outlet property="cancelAlarmLabel" destination="m9v-yD-jWz" id="Wi3-lq-Hvz"/>
+                        <outlet property="snoozeButton" destination="iII-JQ-rce" id="nI2-sJ-dPd"/>
+                        <outlet property="timeLabel" destination="tup-KP-pmf" id="IXY-Sw-QtG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VmI-76-tJv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-316" y="-1555.7721139430287"/>
+        </scene>
+    </scenes>
+</document>
