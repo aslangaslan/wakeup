@@ -11,23 +11,25 @@ import AVFoundation
 
 class SetAlarmViewController: UIViewController {
 
-    // MARK:- Variables
+    // Variables
     
     let device:UIDevice = UIDevice.current
-    
-    var player = AVAudioPlayer()
-    
+    var alarm: Alarm?
     var selectedDate: Date!
-    
     var fireDate: Date {
         //debugPrint("Compund property - Fire date: " + date.description + "|" + "Date: " + Date().resetSecond.description)
         if self.selectedDate.resetSecond < Date().resetSecond { return self.selectedDate.addingTimeInterval(TimeInterval(86400)) }
         else { return self.selectedDate }
     }
-    
-    var alarm: Alarm?
-    
     let segueIdentifier = "ShowRunAlarmViewController"
+    
+    // Core Data Variables
+    
+    var dataController: DataController!
+    
+    // AVFoundation Variables
+    
+    var player = AVAudioPlayer()
     
     // MARK:- Outlets
     
@@ -66,10 +68,10 @@ class SetAlarmViewController: UIViewController {
 extension SetAlarmViewController {
     
     func setAlarm() {
-        self.alarm = Alarm(sender: self, fireDate: fireDate)
+        self.alarm = Alarm(sender: self, fireDate: fireDate, dataController: self.dataController)
         guard let alarm = self.alarm else { return }
         
-        if alarm.set() { performSegue(withIdentifier: segueIdentifier, sender: self) }
-        else { debugPrint("Fire date is not eligible!") }
+        alarm.set()
+        performSegue(withIdentifier: segueIdentifier, sender: self)
     }
 }

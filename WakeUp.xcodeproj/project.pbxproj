@@ -13,6 +13,8 @@
 		7203B3C12246CE69006F5665 /* MotionTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7203B3C02246CE68006F5665 /* MotionTracking.swift */; };
 		722825E0223AA7FB0060C608 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722825DF223AA7FB0060C608 /* Alarm.swift */; };
 		722825E2223AAF370060C608 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722825E1223AAF370060C608 /* Report.swift */; };
+		72D3B32F224BD584001B0B8F /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D3B32E224BD584001B0B8F /* DataController.swift */; };
+		72D3B331224BD8E2001B0B8F /* AlarmEntity+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D3B330224BD8E2001B0B8F /* AlarmEntity+Extension.swift */; };
 		C26C5F0E2230208900F08E5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26C5F0D2230208900F08E5F /* AppDelegate.swift */; };
 		C26C5F102230208900F08E5F /* SetAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26C5F0F2230208900F08E5F /* SetAlarmViewController.swift */; };
 		C26C5F132230208900F08E5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26C5F112230208900F08E5F /* Main.storyboard */; };
@@ -30,6 +32,8 @@
 		7203B3C02246CE68006F5665 /* MotionTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionTracking.swift; sourceTree = "<group>"; };
 		722825DF223AA7FB0060C608 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		722825E1223AAF370060C608 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		72D3B32E224BD584001B0B8F /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		72D3B330224BD8E2001B0B8F /* AlarmEntity+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlarmEntity+Extension.swift"; sourceTree = "<group>"; };
 		C26C5F0A2230208900F08E5F /* WakeUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WakeUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C26C5F0D2230208900F08E5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C26C5F0F2230208900F08E5F /* SetAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAlarmViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +63,14 @@
 				7203B3BB22458910006F5665 /* HealthKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		72D3B332224BD922001B0B8F /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				72D3B330224BD8E2001B0B8F /* AlarmEntity+Extension.swift */,
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 		C26C5F012230208900F08E5F = {
@@ -96,6 +108,7 @@
 		C26C5F22223023AD00F08E5F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				72D3B332224BD922001B0B8F /* Core Data */,
 				C26C5F272234446700F08E5F /* Facebook API */,
 				C26C5F282234447100F08E5F /* Twitter API */,
 				C26C5F142230208900F08E5F /* WakeUp.xcdatamodeld */,
@@ -104,6 +117,7 @@
 				722825E1223AAF370060C608 /* Report.swift */,
 				7203B3B8223D7A08006F5665 /* Date+Extension.swift */,
 				7203B3BE2246CD6A006F5665 /* Notification+Extension.swift */,
+				72D3B32E224BD584001B0B8F /* DataController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,6 +201,7 @@
 				TargetAttributes = {
 					C26C5F092230208900F08E5F = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -234,11 +249,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72D3B331224BD8E2001B0B8F /* AlarmEntity+Extension.swift in Sources */,
 				7203B3C12246CE69006F5665 /* MotionTracking.swift in Sources */,
 				C26C5F102230208900F08E5F /* SetAlarmViewController.swift in Sources */,
 				C26C5F0E2230208900F08E5F /* AppDelegate.swift in Sources */,
 				722825E0223AA7FB0060C608 /* Alarm.swift in Sources */,
 				C26C5F2A22345E6B00F08E5F /* RunAlarmViewController.swift in Sources */,
+				72D3B32F224BD584001B0B8F /* DataController.swift in Sources */,
 				7203B3B9223D7A08006F5665 /* Date+Extension.swift in Sources */,
 				C26C5F162230208900F08E5F /* WakeUp.xcdatamodeld in Sources */,
 				7203B3BF2246CD6A006F5665 /* Notification+Extension.swift in Sources */,
@@ -398,7 +415,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aslanapps.WakeUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -417,7 +434,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aslanapps.WakeUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
