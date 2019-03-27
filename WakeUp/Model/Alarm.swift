@@ -62,29 +62,6 @@ class Alarm {
         UIDevice.current.isProximityMonitoringEnabled = true
     }
     
-//    func set() -> Bool {
-//        if isFireDateEligible {
-//            let timer = Timer(fireAt: self.fireDate, interval: 0, target: self, selector: #selector(ring(sender:)), userInfo: nil, repeats: false)
-//            RunLoop.current.add(timer, forMode: .common)
-//            self.status = .set
-//
-//            // Add Timers Array
-//            timers.append(timer)
-//
-//            // Start UI Refreshing
-//            self.displayLink = CADisplayLink(target: self, selector: #selector(refreshUI))
-//            self.startRefreshingUI()
-//
-//            // Activate Proximity Sensor
-//            UIDevice.current.isProximityMonitoringEnabled = true
-//
-//            return true
-//        }
-//        else {
-//            return false
-//        }
-//    }
-    
     @objc private func ring(sender timer: Timer) {
         if self.stepCount > stopTimerStepCount {
             debugPrint("Alarm Stopped ...")
@@ -117,10 +94,6 @@ class Alarm {
         let timeInterval = TimeInterval(snoozeInterval * 60)
         self.fireDate = self.fireDate.addingTimeInterval(timeInterval)
         self.set()
-    }
-    
-    func getStepCount() -> Int {
-        return self.stepCount
     }
     
     func invalidate() {

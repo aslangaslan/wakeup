@@ -15,16 +15,19 @@
 		722825E2223AAF370060C608 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722825E1223AAF370060C608 /* Report.swift */; };
 		72D3B32F224BD584001B0B8F /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D3B32E224BD584001B0B8F /* DataController.swift */; };
 		72D3B331224BD8E2001B0B8F /* AlarmEntity+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D3B330224BD8E2001B0B8F /* AlarmEntity+Extension.swift */; };
+		72D3B336224C1EFC001B0B8F /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D3B335224C1EFC001B0B8F /* ReportViewController.swift */; };
+		72D3B338224C2724001B0B8F /* WakeUp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C26C5F142230208900F08E5F /* WakeUp.xcdatamodeld */; };
+		A0AF6E2E2F83DCD6937D3BE3 /* Pods_WakeUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1201DD64D94FDFE650505E0 /* Pods_WakeUp.framework */; };
 		C26C5F0E2230208900F08E5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26C5F0D2230208900F08E5F /* AppDelegate.swift */; };
 		C26C5F102230208900F08E5F /* SetAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26C5F0F2230208900F08E5F /* SetAlarmViewController.swift */; };
 		C26C5F132230208900F08E5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26C5F112230208900F08E5F /* Main.storyboard */; };
-		C26C5F162230208900F08E5F /* WakeUp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C26C5F142230208900F08E5F /* WakeUp.xcdatamodeld */; };
 		C26C5F182230208A00F08E5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C26C5F172230208A00F08E5F /* Assets.xcassets */; };
 		C26C5F1B2230208A00F08E5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26C5F192230208A00F08E5F /* LaunchScreen.storyboard */; };
 		C26C5F2A22345E6B00F08E5F /* RunAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26C5F2922345E6B00F08E5F /* RunAlarmViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		642223D30726DDFF1CF192ED /* Pods-WakeUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WakeUp.debug.xcconfig"; path = "Target Support Files/Pods-WakeUp/Pods-WakeUp.debug.xcconfig"; sourceTree = "<group>"; };
 		7203B3B8223D7A08006F5665 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		7203B3BB22458910006F5665 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		7203B3BD22458910006F5665 /* WakeUp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WakeUp.entitlements; sourceTree = "<group>"; };
@@ -34,6 +37,7 @@
 		722825E1223AAF370060C608 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		72D3B32E224BD584001B0B8F /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		72D3B330224BD8E2001B0B8F /* AlarmEntity+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlarmEntity+Extension.swift"; sourceTree = "<group>"; };
+		72D3B335224C1EFC001B0B8F /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		C26C5F0A2230208900F08E5F /* WakeUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WakeUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C26C5F0D2230208900F08E5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C26C5F0F2230208900F08E5F /* SetAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAlarmViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +47,8 @@
 		C26C5F1A2230208A00F08E5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C26C5F1C2230208A00F08E5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C26C5F2922345E6B00F08E5F /* RunAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunAlarmViewController.swift; sourceTree = "<group>"; };
+		D1201DD64D94FDFE650505E0 /* Pods_WakeUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WakeUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC5F1AC22B65F3C6D81E369E /* Pods-WakeUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WakeUp.release.xcconfig"; path = "Target Support Files/Pods-WakeUp/Pods-WakeUp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,16 +57,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				7203B3BC22458910006F5665 /* HealthKit.framework in Frameworks */,
+				A0AF6E2E2F83DCD6937D3BE3 /* Pods_WakeUp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		599748C6B94C619D2D9ACFDF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				642223D30726DDFF1CF192ED /* Pods-WakeUp.debug.xcconfig */,
+				FC5F1AC22B65F3C6D81E369E /* Pods-WakeUp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7203B3BA22458910006F5665 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				7203B3BB22458910006F5665 /* HealthKit.framework */,
+				D1201DD64D94FDFE650505E0 /* Pods_WakeUp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -80,6 +97,7 @@
 				C26C5F0C2230208900F08E5F /* WakeUp */,
 				C26C5F0B2230208900F08E5F /* Products */,
 				7203B3BA22458910006F5665 /* Frameworks */,
+				599748C6B94C619D2D9ACFDF /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +145,7 @@
 			children = (
 				C26C5F0F2230208900F08E5F /* SetAlarmViewController.swift */,
 				C26C5F2922345E6B00F08E5F /* RunAlarmViewController.swift */,
+				72D3B335224C1EFC001B0B8F /* ReportViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -176,9 +195,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C26C5F1F2230208A00F08E5F /* Build configuration list for PBXNativeTarget "WakeUp" */;
 			buildPhases = (
+				8192F6371038E6700E085D13 /* [CP] Check Pods Manifest.lock */,
 				C26C5F062230208900F08E5F /* Sources */,
 				C26C5F072230208900F08E5F /* Frameworks */,
 				C26C5F082230208900F08E5F /* Resources */,
+				B40587A2FF3FBC5D005BC4BA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -244,11 +265,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8192F6371038E6700E085D13 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WakeUp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B40587A2FF3FBC5D005BC4BA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WakeUp/Pods-WakeUp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WakeUp/Pods-WakeUp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C26C5F062230208900F08E5F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72D3B338224C2724001B0B8F /* WakeUp.xcdatamodeld in Sources */,
 				72D3B331224BD8E2001B0B8F /* AlarmEntity+Extension.swift in Sources */,
 				7203B3C12246CE69006F5665 /* MotionTracking.swift in Sources */,
 				C26C5F102230208900F08E5F /* SetAlarmViewController.swift in Sources */,
@@ -257,7 +326,7 @@
 				C26C5F2A22345E6B00F08E5F /* RunAlarmViewController.swift in Sources */,
 				72D3B32F224BD584001B0B8F /* DataController.swift in Sources */,
 				7203B3B9223D7A08006F5665 /* Date+Extension.swift in Sources */,
-				C26C5F162230208900F08E5F /* WakeUp.xcdatamodeld in Sources */,
+				72D3B336224C1EFC001B0B8F /* ReportViewController.swift in Sources */,
 				7203B3BF2246CD6A006F5665 /* Notification+Extension.swift in Sources */,
 				722825E2223AAF370060C608 /* Report.swift in Sources */,
 			);
@@ -403,6 +472,7 @@
 		};
 		C26C5F202230208A00F08E5F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 642223D30726DDFF1CF192ED /* Pods-WakeUp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WakeUp/WakeUp.entitlements;
@@ -422,6 +492,7 @@
 		};
 		C26C5F212230208A00F08E5F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5F1AC22B65F3C6D81E369E /* Pods-WakeUp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WakeUp/WakeUp.entitlements;
