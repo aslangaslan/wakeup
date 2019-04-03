@@ -30,12 +30,12 @@ class RunAlarmViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let rightSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleRightSwipe))
-        rightSwipeGesture.direction = .right
-        self.view.addGestureRecognizer(rightSwipeGesture)
+        let downSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleDownSwipeGesture))
+        downSwipeGesture.direction = .down
+        self.view.addGestureRecognizer(downSwipeGesture)
     }
     
-    @objc func handleRightSwipe() {
+    @objc func handleDownSwipeGesture() {
         self.alarm.invalidate()
         self.alarm = nil
         self.dismiss(animated: true, completion: nil)
