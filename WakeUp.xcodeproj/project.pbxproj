@@ -11,8 +11,11 @@
 		7203B3BC22458910006F5665 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7203B3BB22458910006F5665 /* HealthKit.framework */; };
 		7203B3BF2246CD6A006F5665 /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7203B3BE2246CD6A006F5665 /* Notification+Extension.swift */; };
 		7203B3C12246CE69006F5665 /* MotionTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7203B3C02246CE68006F5665 /* MotionTracking.swift */; };
+		720EE293224C338D0094E409 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720EE292224C338D0094E409 /* UIButton+Extension.swift */; };
+		720EE2952252C0F90094E409 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720EE2942252C0F90094E409 /* UIView+Extension.swift */; };
 		722825E0223AA7FB0060C608 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722825DF223AA7FB0060C608 /* Alarm.swift */; };
 		722825E2223AAF370060C608 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722825E1223AAF370060C608 /* Report.swift */; };
+		72738E3D2254F2A2005AAC9E /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72738E3C2254F2A2005AAC9E /* UIImageView+Extension.swift */; };
 		72D3B32F224BD584001B0B8F /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D3B32E224BD584001B0B8F /* DataController.swift */; };
 		72D3B331224BD8E2001B0B8F /* AlarmEntity+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D3B330224BD8E2001B0B8F /* AlarmEntity+Extension.swift */; };
 		72D3B336224C1EFC001B0B8F /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D3B335224C1EFC001B0B8F /* ReportViewController.swift */; };
@@ -33,8 +36,11 @@
 		7203B3BD22458910006F5665 /* WakeUp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WakeUp.entitlements; sourceTree = "<group>"; };
 		7203B3BE2246CD6A006F5665 /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
 		7203B3C02246CE68006F5665 /* MotionTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionTracking.swift; sourceTree = "<group>"; };
+		720EE292224C338D0094E409 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		720EE2942252C0F90094E409 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		722825DF223AA7FB0060C608 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		722825E1223AAF370060C608 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		72738E3C2254F2A2005AAC9E /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		72D3B32E224BD584001B0B8F /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		72D3B330224BD8E2001B0B8F /* AlarmEntity+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlarmEntity+Extension.swift"; sourceTree = "<group>"; };
 		72D3B335224C1EFC001B0B8F /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +88,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		720EE291224C334F0094E409 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7203B3B8223D7A08006F5665 /* Date+Extension.swift */,
+				720EE292224C338D0094E409 /* UIButton+Extension.swift */,
+				7203B3BE2246CD6A006F5665 /* Notification+Extension.swift */,
+				720EE2942252C0F90094E409 /* UIView+Extension.swift */,
+				72738E3C2254F2A2005AAC9E /* UIImageView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		72D3B332224BD922001B0B8F /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +136,7 @@
 				C26C5F23223023BC00F08E5F /* View Controllers */,
 				C26C5F25223023DB00F08E5F /* Storyboards */,
 				C26C5F26223023E900F08E5F /* Assets */,
+				720EE291224C334F0094E409 /* Extensions */,
 				C26C5F1C2230208A00F08E5F /* Info.plist */,
 			);
 			path = WakeUp;
@@ -133,8 +152,6 @@
 				722825DF223AA7FB0060C608 /* Alarm.swift */,
 				7203B3C02246CE68006F5665 /* MotionTracking.swift */,
 				722825E1223AAF370060C608 /* Report.swift */,
-				7203B3B8223D7A08006F5665 /* Date+Extension.swift */,
-				7203B3BE2246CD6A006F5665 /* Notification+Extension.swift */,
 				72D3B32E224BD584001B0B8F /* DataController.swift */,
 			);
 			path = Model;
@@ -317,13 +334,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72738E3D2254F2A2005AAC9E /* UIImageView+Extension.swift in Sources */,
 				72D3B338224C2724001B0B8F /* WakeUp.xcdatamodeld in Sources */,
 				72D3B331224BD8E2001B0B8F /* AlarmEntity+Extension.swift in Sources */,
 				7203B3C12246CE69006F5665 /* MotionTracking.swift in Sources */,
 				C26C5F102230208900F08E5F /* SetAlarmViewController.swift in Sources */,
 				C26C5F0E2230208900F08E5F /* AppDelegate.swift in Sources */,
 				722825E0223AA7FB0060C608 /* Alarm.swift in Sources */,
+				720EE293224C338D0094E409 /* UIButton+Extension.swift in Sources */,
 				C26C5F2A22345E6B00F08E5F /* RunAlarmViewController.swift in Sources */,
+				720EE2952252C0F90094E409 /* UIView+Extension.swift in Sources */,
 				72D3B32F224BD584001B0B8F /* DataController.swift in Sources */,
 				7203B3B9223D7A08006F5665 /* Date+Extension.swift in Sources */,
 				72D3B336224C1EFC001B0B8F /* ReportViewController.swift in Sources */,

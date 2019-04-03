@@ -107,6 +107,7 @@ class Alarm {
 //MARK:- Helper Methods
 
 extension Alarm {
+    
     @objc func refreshUI() {
         // Print Outputs
         debugPrint("Date: " + Date().description)
@@ -121,7 +122,7 @@ extension Alarm {
         let second = Int(Date().timeIntervalSince(self.initDate))
         if second == cancelTimeInterval {
             UIView.animate(withDuration: 1) {
-                presentedViewController.cancelAlarmLabel.isHidden = true
+                //presentedViewController.cancelAlarmLabel.isHidden = true
             }
         }
     }

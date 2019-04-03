@@ -16,11 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let dataController: DataController = DataController(modelName: "WakeUp")
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         // This will inject dataController dependency into notebooksListViewController
         let tabBarController = window?.rootViewController as! UITabBarController
+        tabBarController.selectedIndex = 0
         if let setAlarmViewController = tabBarController.selectedViewController as? SetAlarmViewController {
             setAlarmViewController.dataController = dataController
         }
+        
         return true
     }
 

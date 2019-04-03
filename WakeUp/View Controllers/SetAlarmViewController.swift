@@ -44,6 +44,7 @@ class SetAlarmViewController: UIViewController {
     @IBAction func datePickerAction(_ sender: Any) {
         debugPrint(datePicker.date.resetSecond)
         self.selectedDate = datePicker.date.resetSecond
+        debugPrint("Selected date is: \(self.selectedDate)")
     }
     
     // MARK:- Methods
@@ -68,6 +69,7 @@ class SetAlarmViewController: UIViewController {
 extension SetAlarmViewController {
     
     func setAlarm() {
+        debugPrint("Fire date is: \(self.selectedDate)")
         self.alarm = Alarm(sender: self, fireDate: fireDate, dataController: self.dataController)
         guard let alarm = self.alarm else { return }
         
