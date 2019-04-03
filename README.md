@@ -4,7 +4,7 @@ This application silences the alarm with a certain number of steps in the mornin
 
 ## Authors
 
-* **Giray Gencaslan** - *Initial work* 
+* **Giray Gencaslan**
 
 ## License
 
