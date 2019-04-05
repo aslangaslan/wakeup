@@ -12,7 +12,7 @@ import FirebaseAuth
 import CoreData
 
 class LoggedInViewController: UIViewController {
-    
+
     var user: User!
     var alarms: [AlarmEntity] = []
     var dataController: DataController!
@@ -31,17 +31,16 @@ class LoggedInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        handleNavigationBarHidden()
+        navigationController?.navigationBar.isHidden = true
+        
+        debugPrint("User is :\(String(describing: self.user))")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        FirebaseClient.isUserSignedIn(completionHandler: handleIsUserLoggedIn(user:))
-        setupFetchedResultsController()
-    }
-    
-    func handleNavigationBarHidden() {
-        navigationController?.navigationBar.isHidden = true
+        handleUser()
+        // FirebaseClient.isUserSignedIn(completionHandler: handleIsUserLoggedIn(user:))
+        // setupFetchedResultsController()
     }
 }
 
@@ -71,7 +70,6 @@ extension LoggedInViewController: NSFetchedResultsControllerDelegate {
     }
     
     func handlePerformFetch() {
-    
         guard let alarmEntities = fetchedResultsController.fetchedObjects else { return }
         debugPrint("Alarm entities object count \(alarmEntities.count)")
     }
@@ -82,7 +80,12 @@ extension LoggedInViewController: NSFetchedResultsControllerDelegate {
 extension LoggedInViewController {
     
     func handleSignOut(success: Bool) {
+        
         if success {
+            // Post Sign-out Action
+            NotificationCenter.default.post(Notification(name: .signOut))
+            
+            // Handle Logout View
             handleSignInViewAppear()
         } else {
             let alert = UIAlertController(title: "Sign Out Failure", message: "Unable to sign out session. Please tyr again later.", preferredStyle: .alert)
@@ -91,11 +94,8 @@ extension LoggedInViewController {
         }
     }
     
-    func handleIsUserLoggedIn(user: User?) {
-        guard let displayName = user?.displayName, let email = user?.email else {
-            handleSignInViewAppear()
-            return
-        }
+    func handleUser() {
+        guard let displayName = self.user.displayName, let email = self.user.email else { return }
         displayNameTextField.text = displayName
         emailTextField.text = email
     }

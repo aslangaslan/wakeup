@@ -34,18 +34,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+        dataController.load()
         FirebaseApp.configure()
-        
         checkSettingsUserDefaults()
         
-        dataController.load()
-        // This will inject dataController dependency into notebooksListViewController
-        let tabBarController = window?.rootViewController as! UITabBarController
+        // This Will Inject DataController Dependency
+        let tabBarController = window?.rootViewController as! TabBarController
         tabBarController.selectedIndex = 0
-        if let setAlarmViewController = tabBarController.selectedViewController as? SetAlarmViewController {
-            setAlarmViewController.dataController = dataController
-        }
+        tabBarController.dataController = dataController
         
         return true
     }

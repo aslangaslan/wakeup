@@ -7,7 +7,14 @@
         <attribute name="userUID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="wakeUpTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
     </entity>
+    <entity name="UserEntity" representedClassName="UserEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photoUrl" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="AlarmEntity" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="UserEntity" positionX="-63" positionY="18" width="128" height="105"/>
     </elements>
 </model>

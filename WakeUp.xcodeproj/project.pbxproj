@@ -23,6 +23,8 @@
 		7273282922577C34002F3081 /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7273282822577C34002F3081 /* LoggedInViewController.swift */; };
 		7273282B2257A1F9002F3081 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7273282A2257A1F9002F3081 /* TabBarController.swift */; };
 		72738E3D2254F2A2005AAC9E /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72738E3C2254F2A2005AAC9E /* UIImageView+Extension.swift */; };
+		7274530C2257AF3800BEA850 /* UserEntity+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7274530B2257AF3800BEA850 /* UserEntity+Extension.swift */; };
+		727453102257BB1800BEA850 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7274530F2257BB1800BEA850 /* AccountController.swift */; };
 		7282CEEF225552E700C49504 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7282CEEE225552E700C49504 /* SettingsViewController.swift */; };
 		7282CEF1225563E200C49504 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7282CEF0225563E200C49504 /* Settings.swift */; };
 		72D3B32F224BD584001B0B8F /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D3B32E224BD584001B0B8F /* DataController.swift */; };
@@ -57,6 +59,8 @@
 		7273282822577C34002F3081 /* LoggedInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
 		7273282A2257A1F9002F3081 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		72738E3C2254F2A2005AAC9E /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		7274530B2257AF3800BEA850 /* UserEntity+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserEntity+Extension.swift"; sourceTree = "<group>"; };
+		7274530F2257BB1800BEA850 /* AccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
 		7282CEEE225552E700C49504 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7282CEF0225563E200C49504 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = "Core Data/Settings.swift"; sourceTree = "<group>"; };
 		72D3B32E224BD584001B0B8F /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
@@ -126,6 +130,24 @@
 			path = "Firebase Requests";
 			sourceTree = "<group>";
 		};
+		727453112257BB1F00BEA850 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				7273282A2257A1F9002F3081 /* TabBarController.swift */,
+				7274530F2257BB1800BEA850 /* AccountController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		727453122257C6F900BEA850 /* Firebase API */ = {
+			isa = PBXGroup;
+			children = (
+				7282CEF222572D2F00C49504 /* Firebase Client */,
+				7273282022575564002F3081 /* Firebase Requests */,
+			);
+			path = "Firebase API";
+			sourceTree = "<group>";
+		};
 		7282CEF222572D2F00C49504 /* Firebase Client */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				72D3B330224BD8E2001B0B8F /* AlarmEntity+Extension.swift */,
+				7274530B2257AF3800BEA850 /* UserEntity+Extension.swift */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -180,8 +203,7 @@
 		C26C5F22223023AD00F08E5F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7282CEF222572D2F00C49504 /* Firebase Client */,
-				7273282022575564002F3081 /* Firebase Requests */,
+				727453122257C6F900BEA850 /* Firebase API */,
 				72D3B332224BD922001B0B8F /* Core Data */,
 				C26C5F142230208900F08E5F /* WakeUp.xcdatamodeld */,
 				722825DF223AA7FB0060C608 /* Alarm.swift */,
@@ -196,7 +218,7 @@
 		C26C5F23223023BC00F08E5F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7273282A2257A1F9002F3081 /* TabBarController.swift */,
+				727453112257BB1F00BEA850 /* Base */,
 				C26C5F0F2230208900F08E5F /* SetAlarmViewController.swift */,
 				C26C5F2922345E6B00F08E5F /* RunAlarmViewController.swift */,
 				72D3B335224C1EFC001B0B8F /* ReportViewController.swift */,
@@ -384,6 +406,7 @@
 				72D3B338224C2724001B0B8F /* WakeUp.xcdatamodeld in Sources */,
 				72D3B331224BD8E2001B0B8F /* AlarmEntity+Extension.swift in Sources */,
 				7273282B2257A1F9002F3081 /* TabBarController.swift in Sources */,
+				727453102257BB1800BEA850 /* AccountController.swift in Sources */,
 				7282CEF1225563E200C49504 /* Settings.swift in Sources */,
 				7203B3C12246CE69006F5665 /* MotionTracking.swift in Sources */,
 				C26C5F102230208900F08E5F /* SetAlarmViewController.swift in Sources */,
@@ -395,6 +418,7 @@
 				7273281F22574BF5002F3081 /* FirebaseClient.swift in Sources */,
 				C26C5F2A22345E6B00F08E5F /* RunAlarmViewController.swift in Sources */,
 				720EE2952252C0F90094E409 /* UIView+Extension.swift in Sources */,
+				7274530C2257AF3800BEA850 /* UserEntity+Extension.swift in Sources */,
 				72D3B32F224BD584001B0B8F /* DataController.swift in Sources */,
 				7282CEEF225552E700C49504 /* SettingsViewController.swift in Sources */,
 				7203B3B9223D7A08006F5665 /* Date+Extension.swift in Sources */,

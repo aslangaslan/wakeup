@@ -10,4 +10,6 @@ import Foundation
 
 extension Notification.Name {
     static let stepCount = Notification.Name("stepCount")
+    static let signOut = Notification.Name("signOut")
+    static let signIn = Notification.Name("signIn")
 }

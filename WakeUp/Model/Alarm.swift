@@ -99,6 +99,7 @@ class Alarm {
     }
     
     func invalidate() {
+        self.saveToCoreData()
         self.timers.forEach({ (timer) in
             timer.invalidate()
         })

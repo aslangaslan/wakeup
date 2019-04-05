@@ -8,21 +8,26 @@
 
 import UIKit
 import AVFoundation
+import FirebaseAuth
 
 class SetAlarmViewController: UIViewController {
 
-    // Variables
+    // Common Variables
     
-    let device:UIDevice = UIDevice.current
-    var userUID: String?
+    var user: User?
+    
+    let segueIdentifier = "ShowRunAlarmViewController"
+    
+    // Alarm Function Variables
+    
     var alarm: Alarm?
+    
     var selectedDate: Date!
+    
     var fireDate: Date {
-        //debugPrint("Compund property - Fire date: " + date.description + "|" + "Date: " + Date().resetSecond.description)
         if self.selectedDate.resetSecond < Date().resetSecond { return self.selectedDate.addingTimeInterval(TimeInterval(86400)) }
         else { return self.selectedDate }
     }
-    let segueIdentifier = "ShowRunAlarmViewController"
     
     // Core Data Variables
     
@@ -45,7 +50,7 @@ class SetAlarmViewController: UIViewController {
     @IBAction func datePickerAction(_ sender: Any) {
         debugPrint(datePicker.date.resetSecond)
         self.selectedDate = datePicker.date.resetSecond
-        debugPrint("Selected date is: \(self.selectedDate)")
+        debugPrint("Selected date is: \(String(describing: self.selectedDate))")
     }
     
     // MARK:- Methods
@@ -55,9 +60,9 @@ class SetAlarmViewController: UIViewController {
         
         datePicker.locale = Locale.current
         datePicker.timeZone = TimeZone.current
-        
-        //tabBarController?.delegate = self
         self.selectedDate = datePicker.date.resetSecond
+        
+        FirebaseClient.isUserSignedIn(completionHandler: handleIsUserLoggedIn(user:))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -67,13 +72,24 @@ class SetAlarmViewController: UIViewController {
     }
 }
 
+// MARK:- Handler Methods
+
+extension SetAlarmViewController {
+    
+    func handleIsUserLoggedIn(user: User?) {
+        guard let user = user else { return }
+        self.user = user
+    }
+    
+}
+
 // MARK:- Helper Methods
 
 extension SetAlarmViewController {
     
     func setAlarm() {
-        debugPrint("Fire date is: \(self.selectedDate)")
-        self.alarm = Alarm(sender: self, fireDate: fireDate, dataController: self.dataController, userUID: self.userUID)
+        debugPrint("Fire date is: \(String(describing: self.selectedDate))")
+        self.alarm = Alarm(sender: self, fireDate: fireDate, dataController: self.dataController, userUID: self.user?.uid)
         guard let alarm = self.alarm else { return }
         
         alarm.set()

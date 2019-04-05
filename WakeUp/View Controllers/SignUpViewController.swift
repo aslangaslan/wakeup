@@ -16,22 +16,40 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak internal var emailTextField: UITextField!
     @IBOutlet weak internal var passwordTextField: UITextField!
     
+    @IBAction func backButtonAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func createUserButtonAction(_ sender: Any) {
-        guard
-            let _ = displayNameTextField.text,
-            let email = emailTextField.text,
-            let password = passwordTextField.text
-            else {
-                return
+        
+        guard let displayName = displayNameTextField.text, let email = emailTextField.text, let password = passwordTextField.text else {
+            let alert = UIAlertController(title: "Create User Error", message: "Please fill in all fields", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in self.dismiss(animated: true, completion: nil) }))
+            self.present(alert, animated: true, completion: nil)
+            return
         }
+        
+        guard displayName.count > 6, email.count > 6, password.count > 6 else {
+            let alert = UIAlertController(title: "Create User Error", message: "All fields must be at least 6 characters long", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in self.dismiss(animated: true, completion: nil) }))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
         FirebaseClient.createUser(withEmail: email, password: password, completionHandler: handleCreateUser(authResult:error:))
     }
+
+}
+
+// MARK:- Handler Methods
+
+extension SignUpViewController {
     
     func handleCreateUser(authResult: AuthDataResult?, error: Error?) {
         guard let _ = authResult else {
             let alert = UIAlertController(title: "Create User Error", message: error.debugDescription, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in self.dismiss(animated: true, completion: nil) }))
-            show(alert, sender: nil)
+            self.present(alert, animated: true, completion: nil)
             return
         }
         guard let displayName = displayNameTextField.text else { return }
@@ -58,4 +76,5 @@ class SignUpViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in self.dismiss(animated: true, completion: nil) }))
         self.present(alert, animated: true, completion: nil)
     }
+    
 }

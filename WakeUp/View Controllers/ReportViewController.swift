@@ -7,14 +7,101 @@
 //
 
 import UIKit
+import FirebaseAuth
+import CoreData
+import Charts
 
 class ReportViewController: UIViewController {
     
+    var user: User?
+    var dataController: DataController!
+    var fetchedResultsController: NSFetchedResultsController<AlarmEntity>!
+    
     @IBOutlet weak var weeklyStackView: UIStackView!
-
+    @IBOutlet weak var registeredUserWarningView: UIView!
+    
+    @IBOutlet weak var barChartView: BarChartView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        handleIsRegisteredUser()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.generateMockData()
+        barChartView.noDataText = "You need to provide data for the chart."
+        
+        let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+        let sleepHours = [0,0,6,3,0,10,0]
+        setChart(days, values: sleepHours)
+    }
+    
+    func setChart(_ days: [String], values: [Int] ) {
+        var dataEntries: [BarChartDataEntry] = []
+        
+        for i in 0..<days.count {
+            let dataEntry = BarChartDataEntry(x: Double(i), y: Double(values[i]))
+            dataEntries.append(dataEntry)
+        }
+        
+        let chartDataSet = BarChartDataSet(values: dataEntries, label: "Hours slept")
+        chartDataSet.colors = ChartColorTemplates.colorful()
+        //chartDataSet.drawValuesEnabled = false
+        let chartData = BarChartData(dataSet: chartDataSet)
+        barChartView.data = chartData
+        
+        barChartView.rightAxis.enabled = false
+        barChartView.leftAxis.enabled = false
+        
+        barChartView.xAxis.drawAxisLineEnabled = false
+        barChartView.xAxis.drawGridLinesEnabled = false
+        
+        barChartView.leftAxis.drawAxisLineEnabled = false
+        barChartView.leftAxis.drawGridLinesEnabled = false
+        barChartView.leftAxis.drawLabelsEnabled = false
+        
+        barChartView.xAxis.drawLabelsEnabled = false
+        
+        barChartView.legend.enabled = false
+        barChartView.minOffset = 0
+    }
+    
+    func handleIsRegisteredUser() {
+        guard let _ = self.user else {
+            registeredUserWarningView.isHidden = false
+            return
+        }
+        // self.generateMockData()
+        setupFetchedResultsController()
+    }
+}
+
+// Core Data Methods
+
+extension ReportViewController: NSFetchedResultsControllerDelegate {
+    
+    fileprivate func setupFetchedResultsController() {
+        let fetchRequest: NSFetchRequest<AlarmEntity> = AlarmEntity.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                                              managedObjectContext: dataController.viewContext,
+                                                              sectionNameKeyPath: nil,
+                                                              cacheName: nil)
+        fetchedResultsController.delegate = self
+        
+        do {
+            try fetchedResultsController.performFetch()
+            handlePerformFetch()
+        } catch {
+            debugPrint("Alarm entity could not be read. Core data problem.")
+        }
+    }
+    
+    func handlePerformFetch() {
+        guard let alarmEntities = fetchedResultsController.fetchedObjects else { return }
+        debugPrint("Alarm entities object count \(alarmEntities.count)")
     }
 }
 
