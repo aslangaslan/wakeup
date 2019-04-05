@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1BEE023640DC2162DF3480B1D8182391"
+               BlueprintIdentifier = "901A5B6FCE6FB3838568EB03D23CEB71"
                BuildableName = "Pods_WakeUp.framework"
                BlueprintName = "Pods-WakeUp"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1BEE023640DC2162DF3480B1D8182391"
+            BlueprintIdentifier = "901A5B6FCE6FB3838568EB03D23CEB71"
             BuildableName = "Pods_WakeUp.framework"
             BlueprintName = "Pods-WakeUp"
             ReferencedContainer = "container:Pods.xcodeproj">

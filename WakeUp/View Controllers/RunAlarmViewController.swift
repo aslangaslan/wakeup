@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import AVKit
 
 class RunAlarmViewController: UIViewController {
     
     // Variables
     var alarm: Alarm!
+    var torchIsOn: Bool = false
 
     // Outlets
     
@@ -22,6 +24,11 @@ class RunAlarmViewController: UIViewController {
     @IBOutlet weak var cancelAlarmLabel: UILabel!
     
     @IBOutlet weak var snoozeButton: UIButton!
+    
+    @IBAction func toggleTorch(_ sender: Any) {
+        torchIsOn.toggle()
+        toggleTorch(on: torchIsOn)
+    }
     
     @IBAction func snoozeAction(_ sender: Any) {
         self.alarm.snoozeAlarm()
@@ -38,6 +45,32 @@ class RunAlarmViewController: UIViewController {
     @objc func handleDownSwipeGesture() {
         self.alarm.invalidate()
         self.alarm = nil
+        toggleTorch(on: false)
         self.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension RunAlarmViewController {
+    
+    func toggleTorch(on: Bool) {
+        guard let device = AVCaptureDevice.default(for: .video) else { return }
+        
+        if device.hasTorch {
+            do {
+                try device.lockForConfiguration()
+                
+                if on == true {
+                    device.torchMode = .on
+                } else {
+                    device.torchMode = .off
+                }
+                
+                device.unlockForConfiguration()
+            } catch {
+                print("Torch could not be used")
+            }
+        } else {
+            print("Torch is not available")
+        }
     }
 }

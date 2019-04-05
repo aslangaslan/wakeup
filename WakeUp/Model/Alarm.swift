@@ -8,15 +8,12 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 class Alarm {
     
-    // Enums
-    private enum Status {
-        case initialize, set, snooze, stop
-    }
-    
     // Variables
+    
     var initDate: Date
     var fireDate: Date
     var isFireDateEligible: Bool {
@@ -25,31 +22,34 @@ class Alarm {
         else { return true }
     }
     
-    var cancelTimeInterval: Int = 5     // Alarmin ne zamana kadar iptal edilecegi (saniye cinsinden)
+    var userUID: String!
+    
     var snoozeInterval: Int = 1         // Alarmin ertelenince ne kadar sure sonra tekrar calacagi
     var stepCount: Int = 0
     var stopTimerStepCount: Int = 20    // Alarmin kac adim atildiktan sonra duracagi
-    private var status: Status
-    
     var displayLink: CADisplayLink?
     var dataController: DataController!
     
     private var timers: [Timer] = []
     
     // Methods
-    init(sender: UIViewController, fireDate: Date, dataController: DataController) {
+    
+    init(sender: UIViewController, fireDate: Date, dataController: DataController, userUID: String?) {
+        
         self.initDate = Date()
         self.fireDate = fireDate
         self.dataController = dataController
         
-        self.status = .initialize
+        
+        debugPrint("Alarm object user UID is: \(userUID)")
+        self.userUID = userUID ?? ""
+        
         MotionTracking.delegate = self
     }
     
     func set() {
         let timer = Timer(fireAt: self.fireDate, interval: 0, target: self, selector: #selector(ring(sender:)), userInfo: nil, repeats: false)
         RunLoop.current.add(timer, forMode: .common)
-        self.status = .set
         
         // Add Timers Array
         timers.append(timer)
@@ -65,6 +65,8 @@ class Alarm {
     @objc private func ring(sender timer: Timer) {
         if self.stepCount > stopTimerStepCount {
             debugPrint("Alarm Stopped ...")
+            
+            self.saveToCoreData()
             MotionTracking.stopTrackingMotion()
             
             self.saveToCoreData()
@@ -117,14 +119,6 @@ extension Alarm {
         guard let presentedViewController = rootViewController.presentedViewController as? RunAlarmViewController else { return }
         presentedViewController.timeLabel.text = Date().time(isSecondVisible: false)
         presentedViewController.alarmLabel.text = fireDate.time(isSecondVisible: false)
-        
-        // Hide Cancel Button After Expiration Time
-        let second = Int(Date().timeIntervalSince(self.initDate))
-        if second == cancelTimeInterval {
-            UIView.animate(withDuration: 1) {
-                //presentedViewController.cancelAlarmLabel.isHidden = true
-            }
-        }
     }
     
     func startRefreshingUI() {
@@ -153,8 +147,7 @@ extension Alarm {
         
         alarmEntity.sleepTime = self.initDate
         alarmEntity.wakeUpTime = self.fireDate
-        alarmEntity.alarmIsTerminated = false
-        alarmEntity.delayCount = 0
+        alarmEntity.date = self.initDate
         alarmEntity.mood = 1
         
         do {

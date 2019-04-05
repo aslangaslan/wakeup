@@ -8,15 +8,38 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let dataController: DataController = DataController(modelName: "WakeUp")
+    
+    func checkSettingsUserDefaults() {
+        if let data = UserDefaults.standard.data(forKey: "settings-data") {
+            print("App has launched before")
+        } else {
+            let settings = Settings(snoozeInterval: 2, alarmStopStepCount: 20)
+            
+            do {
+                let data = try NSKeyedArchiver.archivedData(withRootObject: settings, requiringSecureCoding: false)
+                UserDefaults.standard.set(data, forKey: "settings-data")
+                debugPrint("Saved...")
+                UserDefaults.standard.synchronize()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        FirebaseApp.configure()
+        
+        checkSettingsUserDefaults()
+        
+        dataController.load()
         // This will inject dataController dependency into notebooksListViewController
         let tabBarController = window?.rootViewController as! UITabBarController
         tabBarController.selectedIndex = 0

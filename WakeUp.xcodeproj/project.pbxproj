@@ -15,7 +15,16 @@
 		720EE2952252C0F90094E409 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720EE2942252C0F90094E409 /* UIView+Extension.swift */; };
 		722825E0223AA7FB0060C608 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722825DF223AA7FB0060C608 /* Alarm.swift */; };
 		722825E2223AAF370060C608 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722825E1223AAF370060C608 /* Report.swift */; };
+		7273281B2257317D002F3081 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7273281A2257317D002F3081 /* GoogleService-Info.plist */; };
+		7273281D22574016002F3081 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7273281C22574016002F3081 /* SignInViewController.swift */; };
+		7273281F22574BF5002F3081 /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7273281E22574BF5002F3081 /* FirebaseClient.swift */; };
+		7273282222575576002F3081 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7273282122575576002F3081 /* User.swift */; };
+		727328242257567B002F3081 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727328232257567B002F3081 /* SignUpViewController.swift */; };
+		7273282922577C34002F3081 /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7273282822577C34002F3081 /* LoggedInViewController.swift */; };
+		7273282B2257A1F9002F3081 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7273282A2257A1F9002F3081 /* TabBarController.swift */; };
 		72738E3D2254F2A2005AAC9E /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72738E3C2254F2A2005AAC9E /* UIImageView+Extension.swift */; };
+		7282CEEF225552E700C49504 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7282CEEE225552E700C49504 /* SettingsViewController.swift */; };
+		7282CEF1225563E200C49504 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7282CEF0225563E200C49504 /* Settings.swift */; };
 		72D3B32F224BD584001B0B8F /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D3B32E224BD584001B0B8F /* DataController.swift */; };
 		72D3B331224BD8E2001B0B8F /* AlarmEntity+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D3B330224BD8E2001B0B8F /* AlarmEntity+Extension.swift */; };
 		72D3B336224C1EFC001B0B8F /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D3B335224C1EFC001B0B8F /* ReportViewController.swift */; };
@@ -40,7 +49,16 @@
 		720EE2942252C0F90094E409 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		722825DF223AA7FB0060C608 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		722825E1223AAF370060C608 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		7273281A2257317D002F3081 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7273281C22574016002F3081 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		7273281E22574BF5002F3081 /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
+		7273282122575576002F3081 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		727328232257567B002F3081 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		7273282822577C34002F3081 /* LoggedInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
+		7273282A2257A1F9002F3081 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		72738E3C2254F2A2005AAC9E /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		7282CEEE225552E700C49504 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		7282CEF0225563E200C49504 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = "Core Data/Settings.swift"; sourceTree = "<group>"; };
 		72D3B32E224BD584001B0B8F /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		72D3B330224BD8E2001B0B8F /* AlarmEntity+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlarmEntity+Extension.swift"; sourceTree = "<group>"; };
 		72D3B335224C1EFC001B0B8F /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +118,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		7273282022575564002F3081 /* Firebase Requests */ = {
+			isa = PBXGroup;
+			children = (
+				7273282122575576002F3081 /* User.swift */,
+			);
+			path = "Firebase Requests";
+			sourceTree = "<group>";
+		};
+		7282CEF222572D2F00C49504 /* Firebase Client */ = {
+			isa = PBXGroup;
+			children = (
+				7273281E22574BF5002F3081 /* FirebaseClient.swift */,
+			);
+			path = "Firebase Client";
+			sourceTree = "<group>";
+		};
 		72D3B332224BD922001B0B8F /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +172,7 @@
 				C26C5F26223023E900F08E5F /* Assets */,
 				720EE291224C334F0094E409 /* Extensions */,
 				C26C5F1C2230208A00F08E5F /* Info.plist */,
+				7273281A2257317D002F3081 /* GoogleService-Info.plist */,
 			);
 			path = WakeUp;
 			sourceTree = "<group>";
@@ -145,14 +180,15 @@
 		C26C5F22223023AD00F08E5F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7282CEF222572D2F00C49504 /* Firebase Client */,
+				7273282022575564002F3081 /* Firebase Requests */,
 				72D3B332224BD922001B0B8F /* Core Data */,
-				C26C5F272234446700F08E5F /* Facebook API */,
-				C26C5F282234447100F08E5F /* Twitter API */,
 				C26C5F142230208900F08E5F /* WakeUp.xcdatamodeld */,
 				722825DF223AA7FB0060C608 /* Alarm.swift */,
 				7203B3C02246CE68006F5665 /* MotionTracking.swift */,
 				722825E1223AAF370060C608 /* Report.swift */,
 				72D3B32E224BD584001B0B8F /* DataController.swift */,
+				7282CEF0225563E200C49504 /* Settings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -160,9 +196,14 @@
 		C26C5F23223023BC00F08E5F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7273282A2257A1F9002F3081 /* TabBarController.swift */,
 				C26C5F0F2230208900F08E5F /* SetAlarmViewController.swift */,
 				C26C5F2922345E6B00F08E5F /* RunAlarmViewController.swift */,
 				72D3B335224C1EFC001B0B8F /* ReportViewController.swift */,
+				7282CEEE225552E700C49504 /* SettingsViewController.swift */,
+				7273282822577C34002F3081 /* LoggedInViewController.swift */,
+				7273281C22574016002F3081 /* SignInViewController.swift */,
+				727328232257567B002F3081 /* SignUpViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -189,20 +230,6 @@
 				C26C5F172230208A00F08E5F /* Assets.xcassets */,
 			);
 			path = Assets;
-			sourceTree = "<group>";
-		};
-		C26C5F272234446700F08E5F /* Facebook API */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Facebook API";
-			sourceTree = "<group>";
-		};
-		C26C5F282234447100F08E5F /* Twitter API */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Twitter API";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C26C5F1B2230208A00F08E5F /* LaunchScreen.storyboard in Resources */,
+				7273281B2257317D002F3081 /* GoogleService-Info.plist in Resources */,
 				C26C5F182230208A00F08E5F /* Assets.xcassets in Resources */,
 				C26C5F132230208900F08E5F /* Main.storyboard in Resources */,
 			);
@@ -314,13 +342,29 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-WakeUp/Pods-WakeUp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -334,17 +378,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				727328242257567B002F3081 /* SignUpViewController.swift in Sources */,
 				72738E3D2254F2A2005AAC9E /* UIImageView+Extension.swift in Sources */,
+				7273282922577C34002F3081 /* LoggedInViewController.swift in Sources */,
 				72D3B338224C2724001B0B8F /* WakeUp.xcdatamodeld in Sources */,
 				72D3B331224BD8E2001B0B8F /* AlarmEntity+Extension.swift in Sources */,
+				7273282B2257A1F9002F3081 /* TabBarController.swift in Sources */,
+				7282CEF1225563E200C49504 /* Settings.swift in Sources */,
 				7203B3C12246CE69006F5665 /* MotionTracking.swift in Sources */,
 				C26C5F102230208900F08E5F /* SetAlarmViewController.swift in Sources */,
 				C26C5F0E2230208900F08E5F /* AppDelegate.swift in Sources */,
 				722825E0223AA7FB0060C608 /* Alarm.swift in Sources */,
+				7273282222575576002F3081 /* User.swift in Sources */,
+				7273281D22574016002F3081 /* SignInViewController.swift in Sources */,
 				720EE293224C338D0094E409 /* UIButton+Extension.swift in Sources */,
+				7273281F22574BF5002F3081 /* FirebaseClient.swift in Sources */,
 				C26C5F2A22345E6B00F08E5F /* RunAlarmViewController.swift in Sources */,
 				720EE2952252C0F90094E409 /* UIView+Extension.swift in Sources */,
 				72D3B32F224BD584001B0B8F /* DataController.swift in Sources */,
+				7282CEEF225552E700C49504 /* SettingsViewController.swift in Sources */,
 				7203B3B9223D7A08006F5665 /* Date+Extension.swift in Sources */,
 				72D3B336224C1EFC001B0B8F /* ReportViewController.swift in Sources */,
 				7203B3BF2246CD6A006F5665 /* Notification+Extension.swift in Sources */,
