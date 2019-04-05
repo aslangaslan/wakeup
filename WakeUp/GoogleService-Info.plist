@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>341025530628-grkk7pk6ibb3smdr2jkg41aksn5n94up.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.341025530628-grkk7pk6ibb3smdr2jkg41aksn5n94up</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBQoGPgjV4J4zinzFrtcYfzhbQh_wUlbpE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>341025530628</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.aslanapps.WakeUp</string>
+	<key>PROJECT_ID</key>
+	<string>wakeup-d2166</string>
+	<key>STORAGE_BUCKET</key>
+	<string>wakeup-d2166.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:341025530628:ios:f48e9dcf214792a0</string>
+	<key>DATABASE_URL</key>
+	<string>https://wakeup-d2166.firebaseio.com</string>
+</dict>
+</plist>
