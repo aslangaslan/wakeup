@@ -13,7 +13,7 @@ import UIKit
     
     @IBInspectable var isCircle: Bool {
         
-        get { return self.isCircle }
+        get { return true }
         
         set {
             if self.isCircle {

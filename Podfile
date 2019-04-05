@@ -4,4 +4,7 @@
 target 'WakeUp' do
   use_frameworks!
   pod 'Charts'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
 end

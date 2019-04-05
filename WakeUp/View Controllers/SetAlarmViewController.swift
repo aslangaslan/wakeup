@@ -14,6 +14,7 @@ class SetAlarmViewController: UIViewController {
     // Variables
     
     let device:UIDevice = UIDevice.current
+    var userUID: String?
     var alarm: Alarm?
     var selectedDate: Date!
     var fireDate: Date {
@@ -54,6 +55,8 @@ class SetAlarmViewController: UIViewController {
         
         datePicker.locale = Locale.current
         datePicker.timeZone = TimeZone.current
+        
+        //tabBarController?.delegate = self
         self.selectedDate = datePicker.date.resetSecond
     }
     
@@ -70,7 +73,7 @@ extension SetAlarmViewController {
     
     func setAlarm() {
         debugPrint("Fire date is: \(self.selectedDate)")
-        self.alarm = Alarm(sender: self, fireDate: fireDate, dataController: self.dataController)
+        self.alarm = Alarm(sender: self, fireDate: fireDate, dataController: self.dataController, userUID: self.userUID)
         guard let alarm = self.alarm else { return }
         
         alarm.set()
