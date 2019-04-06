@@ -20,7 +20,7 @@ extension Date {
         return Calendar.current.date(from: returnDateComponents)!
     }
     
-    func local() -> Date {
+    var local: Date {
         let secondsFromGMT = TimeZone.current.secondsFromGMT()
         let timeInterval = TimeInterval(secondsFromGMT)
         let localDate = self.addingTimeInterval(timeInterval)
@@ -47,5 +47,24 @@ extension Date {
         } else {
             return hourDescription + ":" + minuteDescription
         }
+    }
+    
+    var dateValue: String {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.calendar = Calendar.current
+        formatter.dateFormat = "dd MMMM yyyy"
+        return formatter.string(from: self)
+    }
+    
+    var startDateOfWeek: Date {
+        let day = Calendar.current.date(from: Calendar.current.dateComponents([.yearForWeekOfYear, .weekOfYear], from: Date()))!
+        let startDateOfWeek = Calendar.current.date(byAdding: .day, value: 1, to: day)!
+        return startDateOfWeek.local
+    }
+    
+    var endDateOfWeek: Date {
+        let enDateOfWeek = Calendar.current.date(byAdding: .day, value: 6, to: self.startDateOfWeek)!
+        return enDateOfWeek.local.resetSecond
     }
 }

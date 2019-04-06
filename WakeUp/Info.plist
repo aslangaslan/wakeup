@@ -47,5 +47,7 @@
 	</array>
 	<key>NSMotionUsageDescription</key>
 	<string>App needs to permission for checking step count</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Application needs to permission for selecting profile picture</string>
 </dict>
 </plist>

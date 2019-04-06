@@ -14,16 +14,15 @@ class RunAlarmViewController: UIViewController {
     // Variables
     var alarm: Alarm!
     var torchIsOn: Bool = false
+    var downSwipeGesture: UISwipeGestureRecognizer!
 
     // Outlets
     
     @IBOutlet weak var timeLabel: UILabel!
-    
     @IBOutlet weak var alarmLabel: UILabel!
-    
     @IBOutlet weak var cancelAlarmLabel: UILabel!
-    
     @IBOutlet weak var snoozeButton: UIButton!
+    @IBOutlet weak var cancelView: UIStackView!
     
     @IBAction func toggleTorch(_ sender: Any) {
         torchIsOn.toggle()
@@ -37,7 +36,7 @@ class RunAlarmViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let downSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleDownSwipeGesture))
+        downSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleDownSwipeGesture))
         downSwipeGesture.direction = .down
         self.view.addGestureRecognizer(downSwipeGesture)
     }

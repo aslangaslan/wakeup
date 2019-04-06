@@ -18,12 +18,10 @@ class LoggedInViewController: UIViewController {
     var dataController: DataController!
     var fetchedResultsController: NSFetchedResultsController<AlarmEntity>!
     
-    @IBOutlet weak var displayNameTextField: UILabel!
-    @IBOutlet weak var emailTextField: UILabel!
-    
-    @IBAction func backupButtonAction(_ sender: Any) {
-
-    }
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var profileImage: UIImageViewExtension!
+    @IBOutlet weak var displayNameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
     
     @IBAction func signOutButtonAction(_ sender: Any) {
         FirebaseClient.signOut(completionHandler: handleSignOut(success:))
@@ -39,39 +37,12 @@ class LoggedInViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         handleUser()
-        // FirebaseClient.isUserSignedIn(completionHandler: handleIsUserLoggedIn(user:))
-        // setupFetchedResultsController()
-    }
-}
-
-// Core Data Methods
-
-extension LoggedInViewController: NSFetchedResultsControllerDelegate {
-    
-    fileprivate func setupFetchedResultsController() {
-        let fetchRequest: NSFetchRequest<AlarmEntity> = AlarmEntity.fetchRequest()
-        let predicate = NSPredicate(format: "userUID == %@", user.uid)
-        fetchRequest.predicate = predicate
-        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
-                                                              managedObjectContext: dataController.viewContext,
-                                                              sectionNameKeyPath: nil,
-                                                              cacheName: "\(String(describing: user))_alarms")
-        fetchedResultsController.delegate = self
-        
-        do {
-            try fetchedResultsController.performFetch()
-            handlePerformFetch()
-        } catch {
-            debugPrint("Alarm entity could not be read. Core data problem.")
-        }
     }
     
-    func handlePerformFetch() {
-        guard let alarmEntities = fetchedResultsController.fetchedObjects else { return }
-        debugPrint("Alarm entities object count \(alarmEntities.count)")
+    func handleLoading(withLoading isLoading: Bool) {
+        view.isUserInteractionEnabled = !isLoading
+        if isLoading { activityIndicator.startAnimating() }
+        else { activityIndicator.stopAnimating() }
     }
 }
 
@@ -96,8 +67,14 @@ extension LoggedInViewController {
     
     func handleUser() {
         guard let displayName = self.user.displayName, let email = self.user.email else { return }
-        displayNameTextField.text = displayName
-        emailTextField.text = email
+        displayNameLabel.text = displayName
+        emailLabel.text = email
+        handleLoading(withLoading: true)
+        FirebaseClient.downloadImage(user: self.user) { (image) in
+            self.handleLoading(withLoading: false)
+            guard let image = image else { return }
+            self.profileImage.image = image
+        }
     }
     
     func handleSignInViewAppear() {
@@ -109,4 +86,19 @@ extension LoggedInViewController {
         // Show Sign In View Controller
         navigationController?.setViewControllers([signInViewController], animated: true)
     }
+}
+
+// MARK:- Textfield Delegate Method
+
+extension LoggedInViewController : UITextFieldDelegate{
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
 }

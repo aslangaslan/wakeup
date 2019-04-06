@@ -17,6 +17,7 @@ class AccountController: UINavigationController, UINavigationControllerDelegate 
         super.viewDidLoad()
         delegate = self
         
+        navigationBar.isHidden = true
         NotificationCenter.default.addObserver(self, selector: #selector(signIn), name: .signIn, object: nil)
         debugPrint("Account controller user uid: \(self.user?.uid ?? "")")
         

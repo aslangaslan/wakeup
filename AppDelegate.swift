@@ -42,6 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabBarController = window?.rootViewController as! TabBarController
         tabBarController.selectedIndex = 0
         tabBarController.dataController = dataController
+        guard let selectedViewController = tabBarController.selectedViewController as? SetAlarmViewController else { return true }
+        selectedViewController.dataController = dataController
         
         return true
     }

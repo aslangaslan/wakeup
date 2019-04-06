@@ -25,17 +25,18 @@ class SetAlarmViewController: UIViewController {
     var selectedDate: Date!
     
     var fireDate: Date {
-        if self.selectedDate.resetSecond < Date().resetSecond { return self.selectedDate.addingTimeInterval(TimeInterval(86400)) }
-        else { return self.selectedDate }
+        print("Selected date \(selectedDate.resetSecond) - date reset second \(Date().resetSecond)")
+        if selectedDate.resetSecond < Date().resetSecond {
+            return selectedDate.addingTimeInterval(TimeInterval(86400))
+        }
+        else {
+            return selectedDate
+        }
     }
     
     // Core Data Variables
     
     var dataController: DataController!
-    
-    // AVFoundation Variables
-    
-    var player = AVAudioPlayer()
     
     // MARK:- Outlets
     
@@ -48,19 +49,33 @@ class SetAlarmViewController: UIViewController {
     }
     
     @IBAction func datePickerAction(_ sender: Any) {
-        debugPrint(datePicker.date.resetSecond)
         self.selectedDate = datePicker.date.resetSecond
-        debugPrint("Selected date is: \(String(describing: self.selectedDate))")
+        print("Selected date is: \(String(describing: self.selectedDate))")
+        print("Fire date is \(self.fireDate)")
     }
     
-    // MARK:- Methods
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        datePicker.date = Date.init()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // We Need to Delay For ViewDidLoad Completed
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { 
+            let alert = UIAlertController(title: "Important Information",
+                                          message: "The application must remain open during use and until it is stopped using the number of alarm steps.",
+                                          preferredStyle: .alert
+            )
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in self.dismiss(animated: true, completion: nil) }))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
         datePicker.locale = Locale.current
         datePicker.timeZone = TimeZone.current
-        self.selectedDate = datePicker.date.resetSecond
+        self.selectedDate = datePicker.date.local.resetSecond
         
         FirebaseClient.isUserSignedIn(completionHandler: handleIsUserLoggedIn(user:))
     }
@@ -88,11 +103,20 @@ extension SetAlarmViewController {
 extension SetAlarmViewController {
     
     func setAlarm() {
-        debugPrint("Fire date is: \(String(describing: self.selectedDate))")
-        self.alarm = Alarm(sender: self, fireDate: fireDate, dataController: self.dataController, userUID: self.user?.uid)
-        guard let alarm = self.alarm else { return }
+        let current = Date().resetSecond
+        if current == fireDate {
+            let alert = UIAlertController(title: "Set Alarm Failure", message: "Current time and alarm time can not be same", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in self.dismiss(animated: true, completion: nil) }))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
         
-        alarm.set()
+        
+        
+        
+        let userUID = self.user?.uid ?? "0"
+        self.alarm = Alarm(sender: self, fireDate: fireDate, dataController: self.dataController, userUID: userUID)
+        self.alarm!.set()
         performSegue(withIdentifier: segueIdentifier, sender: self)
     }
 }

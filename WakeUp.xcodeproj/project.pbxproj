@@ -13,6 +13,7 @@
 		7203B3C12246CE69006F5665 /* MotionTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7203B3C02246CE68006F5665 /* MotionTracking.swift */; };
 		720EE293224C338D0094E409 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720EE292224C338D0094E409 /* UIButton+Extension.swift */; };
 		720EE2952252C0F90094E409 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720EE2942252C0F90094E409 /* UIView+Extension.swift */; };
+		7222FC232259093100E7E393 /* alarm-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7222FC222259093000E7E393 /* alarm-sound.mp3 */; };
 		722825E0223AA7FB0060C608 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722825DF223AA7FB0060C608 /* Alarm.swift */; };
 		722825E2223AAF370060C608 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722825E1223AAF370060C608 /* Report.swift */; };
 		7273281B2257317D002F3081 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7273281A2257317D002F3081 /* GoogleService-Info.plist */; };
@@ -49,6 +50,7 @@
 		7203B3C02246CE68006F5665 /* MotionTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionTracking.swift; sourceTree = "<group>"; };
 		720EE292224C338D0094E409 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		720EE2942252C0F90094E409 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		7222FC222259093000E7E393 /* alarm-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "alarm-sound.mp3"; sourceTree = "<group>"; };
 		722825DF223AA7FB0060C608 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		722825E1223AAF370060C608 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		7273281A2257317D002F3081 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 		C26C5F26223023E900F08E5F /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				7222FC222259093000E7E393 /* alarm-sound.mp3 */,
 				C26C5F172230208A00F08E5F /* Assets.xcassets */,
 			);
 			path = Assets;
@@ -326,6 +329,7 @@
 				C26C5F1B2230208A00F08E5F /* LaunchScreen.storyboard in Resources */,
 				7273281B2257317D002F3081 /* GoogleService-Info.plist in Resources */,
 				C26C5F182230208A00F08E5F /* Assets.xcassets in Resources */,
+				7222FC232259093100E7E393 /* alarm-sound.mp3 in Resources */,
 				C26C5F132230208900F08E5F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

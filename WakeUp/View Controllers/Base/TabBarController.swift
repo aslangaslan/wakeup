@@ -18,7 +18,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         super.viewDidLoad()
         
         delegate = self
-        tabBarController?.selectedIndex = 0
+        //tabBarController?.selectedIndex = 0
         
         NotificationCenter.default.addObserver(self, selector: #selector(signOut), name: .signOut, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(signIn), name: .signIn, object: nil)
@@ -39,10 +39,9 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     @objc func signIn(notification: Notification) {
         guard let userDictionary = notification.userInfo as? [String: User] else { return }
-        
         if let user = userDictionary["User"]{
             self.user = user
-            debugPrint("Tabbar controller signed id successfully...")
+            debugPrint("Tabbar controller signed in successfully...")
         }
     }
 }

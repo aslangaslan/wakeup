@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseStorage
 
 class FirebaseClient {
     
@@ -27,11 +28,10 @@ class FirebaseClient {
         }
     }
     
-    static func createProfileChangeRequest(withDisplayName displayName: String, completionHandler: @escaping (Error?) -> Void) {
-        
+    static func createProfileChangeRequest(withDisplayName displayName: String, photoURL: URL?, completionHandler: @escaping (Error?) -> Void) {
         let changeRequest = Firebase.Auth.auth().currentUser?.createProfileChangeRequest()
         changeRequest?.displayName = displayName
-        changeRequest?.photoURL =  URL(string: "https://www.google.com")
+        changeRequest?.photoURL =  photoURL
         changeRequest?.commitChanges(completion: { (error) in
             guard let error = error else {
                 DispatchQueue.main.async {
@@ -84,5 +84,43 @@ class FirebaseClient {
                 completionHandler(false)
             }
         }
+    }
+    
+    static func uploadImage(image: UIImage, user: User, completionHandler: @escaping (URL?) -> Void) {
+        let uuid: String = user.uid
+        let reference = uuid + "-profile.jpg"
+        let storageRef = Storage.storage().reference().child(reference)
+        if let uploadData = image.jpegData(compressionQuality: 0.5) {
+            let uploadTask = storageRef.putData(uploadData, metadata: nil) { (metadata, error) in
+                guard let metadata = metadata else {
+                    completionHandler(nil)
+                    return
+                }
+                let _ = metadata.size
+                storageRef.downloadURL { (url, error) in
+                    guard let downloadURL = url else {
+                        completionHandler(nil)
+                        return
+                    }
+                    completionHandler(downloadURL)
+                }
+            }
+            uploadTask.resume()
+        }
+    }
+    
+    static func downloadImage(user: User, completionHandler: @escaping (UIImage?) -> Void) {
+        let reference = user.uid + "-profile.jpg"
+        let storageRef = Storage.storage().reference().child(reference)
+        
+        // Download in memory with a maximum allowed size of 2MB (1 * 1024 * 1024 bytes)
+        storageRef.getData(maxSize: 2 * 1024 * 1024) { data, error in
+            if error != nil {
+                completionHandler(nil)
+            } else {
+                let image = UIImage(data: data!)
+                completionHandler(image)
+            }
+        }.resume()
     }
 }
