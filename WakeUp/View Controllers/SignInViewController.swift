@@ -9,10 +9,12 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import Reachability
 
 class SignInViewController: UIViewController {
     
     let signInSegueIdentifier = "showSignedInViewController"
+    var reachability: Reachability!
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -21,8 +23,21 @@ class SignInViewController: UIViewController {
     
     @IBAction func signInButtonAction(_ sender: Any) {
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
-        FirebaseClient.signIn(withEmail: email, password: password, completionHandler: handleSignIn(authResult:error:))
-        handleLoading(withLoading: true)
+        
+        if reachability.isReachable {
+            FirebaseClient.signIn(withEmail: email, password: password, completionHandler: handleSignIn(authResult:error:))
+            handleLoading(withLoading: true)
+        }
+        else {
+            let alert = UIAlertController(title: "Connection Failure", message: "There is no internet connection.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in self.dismiss(animated: true, completion: nil) }))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        reachability = Reachability()!
     }
     
     override func viewDidLoad() {

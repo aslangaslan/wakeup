@@ -11,6 +11,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseStorage
+import FirebaseDatabase
 
 class FirebaseClient {
     
@@ -91,7 +92,7 @@ class FirebaseClient {
         let reference = uuid + "-profile.jpg"
         let storageRef = Storage.storage().reference().child(reference)
         if let uploadData = image.jpegData(compressionQuality: 0.5) {
-            let uploadTask = storageRef.putData(uploadData, metadata: nil) { (metadata, error) in
+            storageRef.putData(uploadData, metadata: nil) { (metadata, error) in
                 guard let metadata = metadata else {
                     completionHandler(nil)
                     return
@@ -105,22 +106,25 @@ class FirebaseClient {
                     completionHandler(downloadURL)
                 }
             }
-            uploadTask.resume()
         }
     }
     
-    static func downloadImage(user: User, completionHandler: @escaping (UIImage?) -> Void) {
+    static func downloadImage(user: User, completionHandler: @escaping (UIImage?, Error?) -> Void) {
         let reference = user.uid + "-profile.jpg"
         let storageRef = Storage.storage().reference().child(reference)
         
         // Download in memory with a maximum allowed size of 2MB (1 * 1024 * 1024 bytes)
-        storageRef.getData(maxSize: 2 * 1024 * 1024) { data, error in
-            if error != nil {
-                completionHandler(nil)
+        storageRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    completionHandler(nil, error)
+                }
             } else {
                 let image = UIImage(data: data!)
-                completionHandler(image)
+                DispatchQueue.main.async {
+                    completionHandler(image, nil)
+                }
             }
-        }.resume()
+        }
     }
 }

@@ -1,4 +1,4 @@
-# WakeUp - Alarm Clock Application with Pedometer
+# WakeUp - Alarm Clock Application with Pedometer 
 
 ![WakeUp App Logo](WakeUp.png)
 

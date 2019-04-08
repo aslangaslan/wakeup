@@ -16,6 +16,9 @@ PODS:
     - FirebaseAnalytics (= 5.8.0)
   - Firebase/CoreOnly (5.19.0):
     - FirebaseCore (= 5.4.0)
+  - Firebase/Database (5.19.0):
+    - Firebase/CoreOnly
+    - FirebaseDatabase (= 5.1.1)
   - Firebase/Firestore (5.19.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (= 1.1.0)
@@ -40,6 +43,10 @@ PODS:
   - FirebaseCore (5.4.0):
     - GoogleUtilities/Environment (~> 5.2)
     - GoogleUtilities/Logger (~> 5.2)
+  - FirebaseDatabase (5.1.1):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 5.2)
+    - leveldb-library (~> 1.18)
   - FirebaseFirestore (1.1.0):
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 5.2)
@@ -111,13 +118,16 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Protobuf (3.7.0)
+  - ReachabilitySwift (4.3.0)
 
 DEPENDENCIES:
   - Charts
   - Firebase/Auth
   - Firebase/Core
+  - Firebase/Database
   - Firebase/Firestore
   - Firebase/Storage
+  - ReachabilitySwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -128,6 +138,7 @@ SPEC REPOS:
     - FirebaseAuth
     - FirebaseAuthInterop
     - FirebaseCore
+    - FirebaseDatabase
     - FirebaseFirestore
     - FirebaseInstanceID
     - FirebaseStorage
@@ -139,6 +150,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Protobuf
+    - ReachabilitySwift
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: 2a230d9cd93e7ce39916044f645cebb31f37dde6
@@ -148,6 +160,7 @@ SPEC CHECKSUMS:
   FirebaseAuth: cbb892a66baed025efc179372598941252acf853
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
   FirebaseCore: 22a79a961c3951ef2f77b67bfbc99e454247b319
+  FirebaseDatabase: 2c15b0ea6f2c6eb5e57413f9d6340f1e50b81ae3
   FirebaseFirestore: 1531eefe02da66be6860966ac4e2cdac635706e2
   FirebaseInstanceID: cf488df2f4b79782f0e430b04a0e17c0aa7979b2
   FirebaseStorage: 6162ef4322502b818d9de0ec552f5226d283de43
@@ -159,7 +172,8 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
+  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
 
-PODFILE CHECKSUM: 9f37b815d5a6c3b87d5cdab2d6cc50bf013d153f
+PODFILE CHECKSUM: ca3ff3d40d472a58eef3bfc9463d8a85748be75e
 
 COCOAPODS: 1.6.0

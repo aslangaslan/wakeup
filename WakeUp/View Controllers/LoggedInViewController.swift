@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import CoreData
+import Reachability
 
 class LoggedInViewController: UIViewController {
 
@@ -17,6 +18,7 @@ class LoggedInViewController: UIViewController {
     var alarms: [AlarmEntity] = []
     var dataController: DataController!
     var fetchedResultsController: NSFetchedResultsController<AlarmEntity>!
+    var reachability: Reachability!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var profileImage: UIImageViewExtension!
@@ -32,10 +34,13 @@ class LoggedInViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         
         debugPrint("User is :\(String(describing: self.user))")
+        
+        profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        reachability = Reachability()!
         handleUser()
     }
     
@@ -69,11 +74,24 @@ extension LoggedInViewController {
         guard let displayName = self.user.displayName, let email = self.user.email else { return }
         displayNameLabel.text = displayName
         emailLabel.text = email
-        handleLoading(withLoading: true)
-        FirebaseClient.downloadImage(user: self.user) { (image) in
-            self.handleLoading(withLoading: false)
-            guard let image = image else { return }
-            self.profileImage.image = image
+        
+        if reachability.isReachable {
+            handleLoading(withLoading: true)
+            FirebaseClient.downloadImage(user: self.user) { (image, error) in
+                self.handleLoading(withLoading: false)
+                guard let image = image else {
+                    let alert = UIAlertController(title: "Get Profile Image Failed", message: error?.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in self.dismiss(animated: true, completion: nil) }))
+                    self.present(alert, animated: true, completion: nil)
+                    return
+                }
+                self.profileImage.image = image
+            }
+        }
+        else {
+            let alert = UIAlertController(title: "Connection Failure", message: "There is no internet connection.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in self.dismiss(animated: true, completion: nil) }))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     

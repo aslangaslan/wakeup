@@ -10,10 +10,12 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import Photos
+import Reachability
 
 class SignUpViewController: UIViewController {
     
     var user: User?
+    var reachability: Reachability!
     
     @IBOutlet weak var profileImageView: UIImageViewExtension!
     @IBOutlet weak internal var displayNameTextField: UITextField!
@@ -46,8 +48,20 @@ class SignUpViewController: UIViewController {
             return
         }
         
-        FirebaseClient.createUser(withEmail: email, password: password, completionHandler: handleCreateUser(authResult:error:))
-        handleLoading(withLoading: true)
+        if reachability.isReachable {
+            FirebaseClient.createUser(withEmail: email, password: password, completionHandler: handleCreateUser(authResult:error:))
+            handleLoading(withLoading: true)
+        }
+        else {
+            let alert = UIAlertController(title: "Connection Failure", message: "There is no internet connection.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in self.dismiss(animated: true, completion: nil) }))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        reachability = Reachability()!
     }
     
     override func viewDidLoad() {

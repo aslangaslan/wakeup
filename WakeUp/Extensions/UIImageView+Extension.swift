@@ -17,13 +17,15 @@ import UIKit
         
         set {
             if self.isCircle {
-                self.layer.cornerRadius = (self.layer.frame.size.width / 2)
+                self.layer.cornerRadius = (self.frame.size.width / 2)
                 self.clipsToBounds = true
             }
             else {
                 self.layer.cornerRadius = 0
                 self.clipsToBounds = false
             }
+            self.layer.masksToBounds = true
+            self.layoutSubviews()
         }
     }
 }
