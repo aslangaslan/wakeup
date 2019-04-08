@@ -18,7 +18,6 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         super.viewDidLoad()
         
         delegate = self
-        //tabBarController?.selectedIndex = 0
         
         NotificationCenter.default.addObserver(self, selector: #selector(signOut), name: .signOut, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(signIn), name: .signIn, object: nil)

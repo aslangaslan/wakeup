@@ -15,11 +15,9 @@
 		720EE2952252C0F90094E409 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720EE2942252C0F90094E409 /* UIView+Extension.swift */; };
 		7222FC232259093100E7E393 /* alarm-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7222FC222259093000E7E393 /* alarm-sound.mp3 */; };
 		722825E0223AA7FB0060C608 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722825DF223AA7FB0060C608 /* Alarm.swift */; };
-		722825E2223AAF370060C608 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722825E1223AAF370060C608 /* Report.swift */; };
 		7273281B2257317D002F3081 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7273281A2257317D002F3081 /* GoogleService-Info.plist */; };
 		7273281D22574016002F3081 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7273281C22574016002F3081 /* SignInViewController.swift */; };
 		7273281F22574BF5002F3081 /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7273281E22574BF5002F3081 /* FirebaseClient.swift */; };
-		7273282222575576002F3081 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7273282122575576002F3081 /* User.swift */; };
 		727328242257567B002F3081 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727328232257567B002F3081 /* SignUpViewController.swift */; };
 		7273282922577C34002F3081 /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7273282822577C34002F3081 /* LoggedInViewController.swift */; };
 		7273282B2257A1F9002F3081 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7273282A2257A1F9002F3081 /* TabBarController.swift */; };
@@ -52,11 +50,9 @@
 		720EE2942252C0F90094E409 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		7222FC222259093000E7E393 /* alarm-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "alarm-sound.mp3"; sourceTree = "<group>"; };
 		722825DF223AA7FB0060C608 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
-		722825E1223AAF370060C608 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		7273281A2257317D002F3081 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7273281C22574016002F3081 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		7273281E22574BF5002F3081 /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
-		7273282122575576002F3081 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		727328232257567B002F3081 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		7273282822577C34002F3081 /* LoggedInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
 		7273282A2257A1F9002F3081 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -124,14 +120,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		7273282022575564002F3081 /* Firebase Requests */ = {
-			isa = PBXGroup;
-			children = (
-				7273282122575576002F3081 /* User.swift */,
-			);
-			path = "Firebase Requests";
-			sourceTree = "<group>";
-		};
 		727453112257BB1F00BEA850 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				7282CEF222572D2F00C49504 /* Firebase Client */,
-				7273282022575564002F3081 /* Firebase Requests */,
 			);
 			path = "Firebase API";
 			sourceTree = "<group>";
@@ -210,7 +197,6 @@
 				C26C5F142230208900F08E5F /* WakeUp.xcdatamodeld */,
 				722825DF223AA7FB0060C608 /* Alarm.swift */,
 				7203B3C02246CE68006F5665 /* MotionTracking.swift */,
-				722825E1223AAF370060C608 /* Report.swift */,
 				72D3B32E224BD584001B0B8F /* DataController.swift */,
 				7282CEF0225563E200C49504 /* Settings.swift */,
 			);
@@ -416,7 +402,6 @@
 				C26C5F102230208900F08E5F /* SetAlarmViewController.swift in Sources */,
 				C26C5F0E2230208900F08E5F /* AppDelegate.swift in Sources */,
 				722825E0223AA7FB0060C608 /* Alarm.swift in Sources */,
-				7273282222575576002F3081 /* User.swift in Sources */,
 				7273281D22574016002F3081 /* SignInViewController.swift in Sources */,
 				720EE293224C338D0094E409 /* UIButton+Extension.swift in Sources */,
 				7273281F22574BF5002F3081 /* FirebaseClient.swift in Sources */,
@@ -428,7 +413,6 @@
 				7203B3B9223D7A08006F5665 /* Date+Extension.swift in Sources */,
 				72D3B336224C1EFC001B0B8F /* ReportViewController.swift in Sources */,
 				7203B3BF2246CD6A006F5665 /* Notification+Extension.swift in Sources */,
-				722825E2223AAF370060C608 /* Report.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

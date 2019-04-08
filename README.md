@@ -2,6 +2,8 @@
 
 ![WakeUp App Logo](WakeUp.png)
 
+![Screenshot 1](SS1.png)![Screenshot 1](SS2.png)![Screenshot 1](SS3.png)![Screenshot 1](SS4.png)
+
 ## Introduction
 
 * The application is intended about the alarm. The alarm can be set normally after alarm time application will begin tracking step count. When the snooze period, step tracking goes on. After finish snooze time, the algorithm calculates steps taken, if step enough for stopping the alarm, the alarm will be invalidated, else new snooze time fired.
