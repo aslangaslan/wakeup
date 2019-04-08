@@ -2,7 +2,7 @@
 
 ![WakeUp App Logo](WakeUp.png)
 
-![Screenshot 1](SS1.png)![Screenshot 1](SS2.png)![Screenshot 1](SS3.png)![Screenshot 1](SS4.png)![Screenshot 1](SS5.png)
+![Screenshot 1](SS1.png)![Screenshot 1](SS2.png)![Screenshot 1](SS3.png)![Screenshot 1](SS4.png)
 
 ## Introduction
 
