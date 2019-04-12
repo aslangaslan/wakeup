@@ -37,4 +37,4 @@ Also for testing core data functionality the code below (in Alarm.swift file at 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the GNU General Public License v3 - see the [LICENSE.md](LICENSE.md) file for details
